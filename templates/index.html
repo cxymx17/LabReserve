@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LabReserve</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container my-4">
+    <h1 class="mb-4 lab-title">Lab Reserve - Computer Lab Reservation</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-info">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
+    <div class="accordion" id="labsAccordion">
+        {% for lab, slots in lab_slots %}
+    <div class="accordion-item mb-4" style="border-radius: 1rem;">
+        <h2 class="accordion-header" id="heading{{ lab[0] }}">
+            <button class="accordion-button fs-4 fw-bold bg-teal text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ lab[0] }}" aria-expanded="false" aria-controls="collapse{{ lab[0] }}">
+                {{ lab[1] }}
+            </button>
+        </h2>
+        <div id="collapse{{ lab[0] }}" class="accordion-collapse collapse" aria-labelledby="heading{{ lab[0] }}">
+            <div class="accordion-body p-0">
+                <ul class="list-group list-group-flush">
+                {% for slot in slots %}
+                <li class="list-group-item py-3 d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                    <span class="fs-5 fw-medium">{{ slot[2] }}</span>
+                        {% if slot[3] == 1 %}
+                            <span class="badge badge-reserved ms-1">Reserved</span>
+                        {% else %}
+                            <span class="badge badge-available ms-1">Available</span>
+                        {% endif %}
+                    </div>
+                    <div>
+                    {% if slot[3] == 0 %}
+                        <a href="{{ url_for('reserve', slot_id=slot[0]) }}" class="btn btn-success rounded-pill px-4">Reserve</a>
+                    {% else %}
+                        <form method="POST" action="{{ url_for('cancel', slot_id=slot[0]) }}" style="display:inline">
+                        <button type="submit" class="btn btn-outline-danger rounded-pill px-4">Cancel</button>
+                        </form>
+                    {% endif %}
+                    </div>
+                </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+body {
+  background: linear-gradient(135deg, #f0f4f8 0%, #e0eafc 100%);
+  min-height: 100vh;
+}
+h1 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  color: #033b4a;
+  margin-bottom: 2rem;
+}
+.card {
+  border-radius: 1rem !important;
+  box-shadow: 0 8px 24px rgba(34, 49, 63, 0.08);
+}
+.bg-teal {
+  background: #15b8a6 !important;
+}
+.text-white {
+  color: #fff !important;
+}
+.list-group-item {
+  background: #fff !important;
+  border: none;
+  border-bottom: 1px solid #f0f4f8 !important;
+  font-size: 1.05rem;
+  transition: background 0.18s;
+}
+.list-group-item:last-child {
+  border-bottom: none !important;
+}
+.list-group-item:hover {
+  background: #f5fafd !important;
+}
+
+.btn-success {
+  background: #43c59e !important;
+  border: none;
+}
+
+.btn-outline-danger {
+  border: 2px solid #fd5e53 !important;
+  color: #fd5e53 !important;
+  background: #fff !important;
+  transition: background 0.18s;
+}
+.btn-outline-danger:hover {
+  background: #fd5e53 !important;
+  color: #fff !important;
+}
+
+.rounded-pill {
+  border-radius: 50rem !important;
+}
+.card-header {
+    background-color: #05b791 !important;
+    color: #fff;
+}
+.badge.bg-secondary {
+    font-size: 1em;
+    vertical-align: middle;
+}
+.btn-outline-danger {
+    border-width: 2px;
+}
+.lab-title {
+  color: #108a7c;         
+  font-family: 'Segoe UI', Arial, sans-serif; 
+  font-weight: 800;      
+  letter-spacing: 0.03em;
+  text-shadow: 1px 2px 6px rgba(0,0,0,0.07); 
+}
+.accordion-item {
+  border-radius: 1rem !important;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(34,49,63,0.07);
+}
+.accordion-button.bg-teal {
+  background: #15b8a6 !important;
+  color: #fff !important;
+}
+.badge-available {
+  background: linear-gradient(135deg, #22e2a8 0%, #2ec4b6 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 50rem;
+  font-size: 1em;
+  padding: 0.4em 1.2em;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(46,196,182,0.12);
+}
+.badge-reserved {
+  background: linear-gradient(135deg, #8c939c 0%, #757575 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 50rem;
+  font-size: 1em;
+  padding: 0.4em 1.2em;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(100,100,100,0.10);
+}
